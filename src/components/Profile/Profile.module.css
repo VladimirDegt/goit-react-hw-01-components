@@ -45,13 +45,9 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-span {
-  display: inline-block;
+  gap: 10px;
 }
 
 .quantity {
   font-weight: 900;
-  margin-top: 10px;
 }

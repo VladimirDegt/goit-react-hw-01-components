@@ -8,13 +8,16 @@ export const App = () => {
   return (
     <div className={css.container}>
       <Profile 
-      username = {user.username}
-      tag = {user.tag}
-      location = {user.location}
-      avatar = {user.avatar}
-      stats = {user.stats}
+        username = {user.username}
+        tag = {user.tag}
+        location = {user.location}
+        avatar = {user.avatar}
+        stats = {user.stats}
       />
-      <Statistics data={data} title='UPLOAD STATS'/>
+      <Statistics
+        title="UPLOAD STATS"
+        stats={data}
+      />
     </div>
   );
 };

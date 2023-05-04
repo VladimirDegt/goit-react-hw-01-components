@@ -1,35 +1,32 @@
+import PropTypes from 'prop-types';
+
 import css from './Statistics.module.css'
 
-export function Statistics( {title, data} ) {
-  console.log(data);
-    return (
-         data.map( (element) => {
-            <li className="item">
-            <span className="label">{element.label}</span>
-            <span className="percentage">{element.percentage}%</span>
-          </li>
-          } )
-        // <section className="statistics">
-        // <h2 className="title">{title}</h2>
+export function Statistics( props ) {
+  const {title, stats} = props;
 
-      //   <ul className="stat-list">
-      //     <li className="item">
-      //       <span className="label">{data.label}</span>
-      //       <span className="percentage">{data.percentage}%</span>
-      //     </li>
-      //     <li className="item">
-      //       <span className="label">{data.label}</span>
-      //       <span className="percentage">{data.percentage}%</span>
-      //     </li>
-      //     <li className="item">
-      //       <span className="label">{data.label}</span>
-      //       <span className="percentage">{data.percentage}%</span>
-      //     </li>
-      //     <li className="item">
-      //       <span className="label">{data.label}</span>
-      //       <span className="percentage">{data.percentage}%</span>
-      //     </li>
-      //   </ul>
-      // </section>
-      )
-}
+  return (
+    <section className={css.statistics}>
+      {title && <h2 className={css.title}>{title}</h2>}
+
+      <ul className={css['stat-list']}>
+        { stats.map( (stat) => (
+          <li className={css.stat} key={stat.id}>
+            <span className={css.label}>{stat.label}</span>
+            <span className={css.percentage}>{stat.percentage}%</span>
+          </li>
+        ))
+        }
+      </ul>
+    </section>
+    )
+};
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }))
+};
