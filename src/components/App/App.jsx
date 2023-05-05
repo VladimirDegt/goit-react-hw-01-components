@@ -1,8 +1,10 @@
-import css from './App.module.css'
+import css from './App.module.css';
 import { Profile } from "../Profile/Profile";
 import { Statistics } from '../Statistics/Statistics';
-import user from '../../user.json'
-import data from '../../data.json'
+import { FriendList } from 'components/FriendList/FriendList';
+import user from '../../user.json';
+import data from '../../data.json';
+import friends from '../../friends.json';
 import { getRandomHexColor } from 'utils/getRandomHexColor';
 
 export const App = () => {
@@ -15,6 +17,9 @@ export const App = () => {
         title="UPLOAD STATS"
         stats={data}
         rendomColor={getRandomHexColor}
+      />
+      <FriendList
+        friends={friends}
       />
     </div>
   );

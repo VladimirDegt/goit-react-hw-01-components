@@ -3,21 +3,21 @@ import { Profile } from './Profile';
 import user from '../../user.json';
 
 describe('Profile component', () => {
-  test('img render', () => {
+  it('img render', () => {
     render( <Profile 
       user={user}
       /> );
       
     expect(screen.getByTestId('img')).toBeInTheDocument();
   })
-  test('list render', () => {
+  it('list render', () => {
     render( <Profile 
       user={user}
       /> );
 
     expect(screen.getByTestId('list')).toBeInTheDocument();
 })
-  test('have class "stats"', () => {
+  it('have class "stats"', () => {
     render( <Profile 
       user={user}
       /> );

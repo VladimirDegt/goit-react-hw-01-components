@@ -1,0 +1,30 @@
+.item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  width: 300px;
+  background-color: white;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.statusRed {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+}
+.statusGreen {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+img {
+  margin: 0;
+}
