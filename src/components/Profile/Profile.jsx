@@ -12,13 +12,14 @@ export function Profile( {user} ) {
         src={avatar}
         alt={username}
         className={css.avatar}
+        data-testid='img'
         />
         <p className={css.name}>{username}</p>
         <p className={css.tag}>@{tag}</p>
         <p className={css.location}>{location}</p>
       </div>
 
-      <ul className={css.stats}>
+      <ul className={css.stats} data-testid='list'>
         <li>
         <span className={css.label}>Followers</span>
         <span className={css.quantity}>{stats.followers}</span>

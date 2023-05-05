@@ -4,7 +4,7 @@ import data from '../../data.json'
 import { getRandomHexColor } from 'utils/getRandomHexColor';
 
 describe( 'Statistics component', () => {
-  test( 'render title', () => {
+  it( 'render title', () => {
     render (
       <Statistics
         title="UPLOAD STATS"
@@ -12,11 +12,21 @@ describe( 'Statistics component', () => {
         rendomColor={getRandomHexColor}
       />
     );
-    expect(screen.getByRole('heading')).toBeInTheDocument();
+    expect(screen.getByTestId('title')).toBeInTheDocument();
     
   })
+
+  it( 'no title', () => {
+    render (
+      <Statistics
+        stats={data}
+        rendomColor={getRandomHexColor}
+      />
+    );
+    expect(screen.queryByTestId('title')).toBeNull();
+  })
   
-  test( 'render list', () => {
+  it( 'render list', () => {
     render (
       <Statistics
         title="UPLOAD STATS"
@@ -24,7 +34,18 @@ describe( 'Statistics component', () => {
         rendomColor={getRandomHexColor}
       />
     );
+    expect(screen.getByTestId('list')).toBeInTheDocument();
+})
 
-    expect(screen.getByRole('list')).toBeInTheDocument();
+  it( 'function was called', () => {
+    const myFunction = jest.fn();
+    render (
+      <Statistics
+        title="UPLOAD STATS"
+        stats={data}
+        rendomColor={myFunction}
+      />
+    );
+    expect(myFunction).toHaveBeenCalled();
 })
 });

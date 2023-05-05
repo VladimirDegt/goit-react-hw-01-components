@@ -8,20 +8,20 @@ describe('Profile component', () => {
       user={user}
       /> );
       
-    expect(screen.getByRole('img')).toBeInTheDocument();
+    expect(screen.getByTestId('img')).toBeInTheDocument();
   })
   test('list render', () => {
     render( <Profile 
       user={user}
       /> );
 
-    expect(screen.getByRole('list')).toBeInTheDocument();
+    expect(screen.getByTestId('list')).toBeInTheDocument();
 })
-  test('list class render', () => {
+  test('have class "stats"', () => {
     render( <Profile 
       user={user}
       /> );
 
-    expect(screen.getByRole('list')).toHaveClass('stats');
+    expect(screen.getByTestId('list')).toHaveClass('stats');
 })
 });
