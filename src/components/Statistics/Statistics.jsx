@@ -9,7 +9,7 @@ export function Statistics( props ) {
     <section className={css.statistics}>
       {title && <h2 className={css.title}>{title}</h2>}
 
-      <ul className={css['stat-list']}>
+      <ul className={css['stat-list']} id='list'>
         { stats.map( (stat) => (
           <li className={css.stat} key={stat.id} style = {{backgroundColor: rendomColor()}}>
             <span className={css.label}>{stat.label}</span>
