@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import css from './Statistics.module.css'
 
 export function Statistics( props ) {
-  const {title, stats} = props;
+  const {title, stats, rendomColor} = props;
 
   return (
     <section className={css.statistics}>
@@ -11,7 +11,7 @@ export function Statistics( props ) {
 
       <ul className={css['stat-list']}>
         { stats.map( (stat) => (
-          <li className={css.stat} key={stat.id}>
+          <li className={css.stat} key={stat.id} style = {{backgroundColor: rendomColor()}}>
             <span className={css.label}>{stat.label}</span>
             <span className={css.percentage}>{stat.percentage}%</span>
           </li>
@@ -28,5 +28,6 @@ Statistics.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     percentage: PropTypes.number.isRequired,
-  }))
+  })),
+  rendomColor: PropTypes.func.isRequired,
 };
