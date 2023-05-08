@@ -1,7 +1,10 @@
-.item {
+import styled from '@emotion/styled'
+
+export const FriendItem = styled.li`
   display: flex;
   align-items: center;
   flex-direction: row;
+  justify-content: space-between;
   gap: 20px;
   width: 300px;
   background-color: white;
@@ -10,21 +13,22 @@
   padding: 10px;
   font-weight: 700;
   font-size: 20px;
-}
+`;
 
-.statusRed {
+export const StatusOff = styled.span`
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: red;
-}
-.statusGreen {
+`;
+
+export const StatusOn = styled.span`
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: green;
-}
+`;
 
-img {
+export const FriendAvatar = styled.img`
   margin: 0;
-}
+`;

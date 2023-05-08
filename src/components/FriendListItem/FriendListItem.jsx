@@ -1,17 +1,17 @@
-import css from './FriendListItem.module.css'
+import { FriendItem, StatusOff, StatusOn, FriendAvatar} from './FriendListItem.styled';
 
 export function FriendListItem( {item} ) {
   const {isOnline, avatar, name} = item;
 
   return (
-    <li className={css.item}>
+    <FriendItem>
       {isOnline 
-      ? <span className={css.statusGreen}></span>
-      : <span className={css.statusRed}></span>
+      ? <StatusOff></StatusOff>
+      : <StatusOn></StatusOn>
       }
-      <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
-      <p className={css.name}>{name}</p>
-    </li>
+      <FriendAvatar src={avatar} alt="User avatar" width="48" />
+      <p>{name}</p>
+    </FriendItem>
   )
 };
 
