@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { FriendItem, StatusOff, StatusOn, FriendAvatar} from './FriendListItem.styled';
 
 export function FriendListItem( {item} ) {
@@ -15,3 +17,10 @@ export function FriendListItem( {item} ) {
   )
 };
 
+FriendListItem.propTypes = {
+  item: PropTypes.shape ({
+    isOnline: PropTypes.bool.isRequired,
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+}).isRequired
+};
