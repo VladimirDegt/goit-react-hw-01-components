@@ -7,7 +7,7 @@ import user from '../../user.json';
 import data from '../../data.json';
 import friends from '../../friends.json';
 import transactions from '../../transactions.json';
-import { getRandomHexColor } from 'utils/getRandomHexColor';
+
 
 export const App = () => {
   return (
@@ -18,7 +18,6 @@ export const App = () => {
       <Statistics
         title="UPLOAD STATS"
         stats={data}
-        rendomColor={getRandomHexColor}
       />
       <FriendList
         friends={friends}

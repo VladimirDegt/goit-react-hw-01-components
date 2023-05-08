@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
 import css from './Statistics.module.css'
+import { getRandomHexColor } from 'utils/getRandomHexColor';
 
-export function Statistics( props ) {
-  const {title, stats, rendomColor} = props;
+export function Statistics( {title, stats } ) {
 
   return (
     <section className={css.statistics}>
@@ -17,7 +17,7 @@ export function Statistics( props ) {
       className={css['stat-list']} 
       data-testid='list'>
         { stats.map( (stat) => (
-          <li className={css.stat} key={stat.id} style = {{backgroundColor: rendomColor()}}>
+          <li className={css.stat} key={stat.id} style = {{backgroundColor: getRandomHexColor()}}>
             <span className={css.label}>{stat.label}</span>
             <span className={css.percentage}>{stat.percentage}%</span>
           </li>
@@ -34,6 +34,5 @@ Statistics.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     percentage: PropTypes.number.isRequired,
-  })),
-  rendomColor: PropTypes.func.isRequired,
+  })).isRequired
 };
