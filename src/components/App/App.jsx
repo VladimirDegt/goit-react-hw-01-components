@@ -1,4 +1,4 @@
-import css from './App.module.css';
+import { Container } from './App.styled';
 import { Profile } from "../Profile/Profile";
 import { Statistics } from '../Statistics/Statistics';
 import { FriendList } from 'components/FriendList/FriendList';
@@ -11,7 +11,7 @@ import transactions from '../../transactions.json';
 
 export const App = () => {
   return (
-    <div className={css.container}>
+    <Container>
       <Profile 
         user={user}
       />
@@ -25,6 +25,6 @@ export const App = () => {
       <TransactionHistory 
         transactions={transactions}
       />
-    </div>
+    </Container>
   );
 };
